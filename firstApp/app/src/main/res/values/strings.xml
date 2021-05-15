@@ -1,7 +1,14 @@
 <resources>
-    <string name="app_name">first App</string>
-    <string name="correct">Правильно</string>
-    <string name="incorrect">Неправильно</string>
+    <string name="app_name">Космос</string>
+    <string name="correct">Правильно!</string>
+    <string name="incorrect">Неправильно!</string>
     <string name="yes">Да</string>
     <string name="no">Нет</string>
+    <string name="question0">1. Есть ли жизнь на Марсе?</string>
+    <string name="question1">2. Первый человек в космосе - Гагарин?</string>
+    <string name="question2">3. Циолковский - космотнавт?</string>
+    <string name="question3">4. Плутон - планета?</string>
+    <string name="question4">5. Третья планета от Солнца - Земля?</string>
+    <string name="trueAnswer">Правильный ответ: </string>
+    <string name="youAnswer">Ваш ответ: </string>
 </resources>
