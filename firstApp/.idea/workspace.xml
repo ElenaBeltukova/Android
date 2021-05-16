@@ -21,18 +21,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ba386ec-982b-476c-b7bd-8dd9f0e1a75e" name="Default Changelist" comment="Интерфейс">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/AnswerActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ResultActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/tumannost_400x270.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_answer.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_result.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="3ba386ec-982b-476c-b7bd-8dd9f0e1a75e" name="Default Changelist" comment="Добавлены вопросы, список ответов">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_main.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620921638143</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Добавлены вопросы, список ответов">
+      <created>1621112971872</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1621112971872</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -179,17 +177,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Интерфейс" />
-    <option name="LAST_COMMIT_MESSAGE" value="Интерфейс" />
+    <MESSAGE value="Добавлены вопросы, список ответов" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлены вопросы, список ответов" />
   </component>
   <component name="WindowStateProjectService">
     <state x="201" y="441" key="#com.intellij.ide.util.MemberChooser" timestamp="1621106864325">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="201" y="441" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1621106864325" />
-    <state x="910" y="549" key="AndroidCreateResourceFileDialog" timestamp="1620990602317">
+    <state x="910" y="549" key="AndroidCreateResourceFileDialog" timestamp="1621193102507">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="910" y="549" key="AndroidCreateResourceFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1620990602317" />
+    <state x="910" y="549" key="AndroidCreateResourceFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1621193102507" />
     <state x="650" y="318" key="FileChooserDialogImpl" timestamp="1621107636723">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -214,10 +213,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="949" y="289" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1620990628628" />
-    <state x="743" y="348" key="Vcs.Push.Dialog.v2" timestamp="1620922518512">
+    <state x="743" y="348" key="Vcs.Push.Dialog.v2" timestamp="1621112985671">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="743" y="348" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1620922518512" />
+    <state x="743" y="348" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1621112985671" />
     <state x="1145" y="580" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1620989603890">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
