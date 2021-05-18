@@ -5,8 +5,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.util.List;
+import java.util.ArrayList;
 
 import java.io.Serializable;
 
@@ -17,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private Button showAnswer;
     private Button restartAnswer;
     private TextView textView;
+    private LinearLayout linearLayout;
     private Question[] questions = new Question[]{
             new Question(R.string.question0,false),
             new Question(R.string.question1,true),
@@ -25,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             new Question(R.string.question4,true)
     };
     private int questionIndex = 0;
+    private ArrayList<Question> questionList = new ArrayList<Question>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,33 +39,36 @@ public class MainActivity extends AppCompatActivity {
 
         if(savedInstanceState != null){
             questionIndex = savedInstanceState.getInt("questionIndex");
+            questionList = (ArrayList<Question>) savedInstanceState.getSerializable("questionList");
         }
-
-        Intent intentRes = new Intent(MainActivity.this, ResultActivity.class);
-        intentRes.putExtra("count", questions.length);
 
         yesBtn = findViewById(R.id.btnYes);
         noBtn = findViewById(R.id.btnNo);
         textView = findViewById(R.id.textView);
         showAnswer = findViewById(R.id.showAnswer);
         restartAnswer = findViewById(R.id.restartAnswer);
+        linearLayout = findViewById(R.id.linearLayout);
         textView.setText(questions[questionIndex].getQuestionResId());
 
         yesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 questions[questionIndex].setAnswerRes(true);
+                questionList.add(questions[questionIndex]);
 
                 if(questions[questionIndex].isAnswerTrue())
                     Toast.makeText(MainActivity.this,R.string.correct,Toast.LENGTH_SHORT).show();
                 else
                     Toast.makeText(MainActivity.this,R.string.incorrect,Toast.LENGTH_SHORT).show();
 
-                intentRes.putExtra("questions" + questionIndex, (Serializable) questions[questionIndex]);
-
-                if (questionIndex+1 == questions.length)
+                if (questionIndex+1 == questions.length) {
+                    Intent intentRes = new Intent(MainActivity.this, ResultActivity.class);
+                    intentRes.putExtra("questionList", questionList);
                     startActivity(intentRes);
-                else {
+                    linearLayout.setVisibility(View.GONE);
+                    textView.setVisibility(View.GONE);
+                    showAnswer.setVisibility(View.GONE);
+                } else {
                     questionIndex = (questionIndex + 1) % questions.length;
                     textView.setText(questions[questionIndex].getQuestionResId());
                 }
@@ -70,16 +78,21 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 questions[questionIndex].setAnswerRes(false);
+                questionList.add(questions[questionIndex]);
 
                 if(questions[questionIndex].isAnswerTrue())
                     Toast.makeText(MainActivity.this,R.string.incorrect,Toast.LENGTH_SHORT).show();
                 else
                     Toast.makeText(MainActivity.this,R.string.correct,Toast.LENGTH_SHORT).show();
 
-                intentRes.putExtra("questions" + questionIndex, (Serializable) questions[questionIndex]);
-                if (questionIndex+1 == questions.length)
+                if (questionIndex+1 == questions.length) {
+                    Intent intentRes = new Intent(MainActivity.this, ResultActivity.class);
+                    intentRes.putExtra("questionList", questionList);
                     startActivity(intentRes);
-                else {
+                    linearLayout.setVisibility(View.GONE);
+                    textView.setVisibility(View.GONE);
+                    showAnswer.setVisibility(View.GONE);
+                } else {
                     questionIndex = (questionIndex + 1) % questions.length;
                     textView.setText(questions[questionIndex].getQuestionResId());
                 }
@@ -97,6 +110,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 questionIndex = 0;
+                questionList.clear();
+                linearLayout.setVisibility(View.VISIBLE);
+                textView.setVisibility(View.VISIBLE);
+                showAnswer.setVisibility(View.VISIBLE);
                 textView.setText(questions[questionIndex].getQuestionResId());
             }
         });
@@ -116,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(savedInstanceState);
         Log.d("SYSTEM INFO: ", "Метод onSaveInstanceState() запущен");
         savedInstanceState.putInt("questionIndex",questionIndex);
+        savedInstanceState.putSerializable("questionList", (Serializable)questionList);
     }
     @Override
     public void onPause(){
