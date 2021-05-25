@@ -22,7 +22,7 @@
         android:id="@+id/itemPhoneTextView"
         />
 
-    <Button
+    <!--Button
         android:id="@+id/btnDelete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,6 +34,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/txtBtnUpd"
-        android:textSize="10sp" />
+        android:textSize="10sp" /-->
 
 </LinearLayout>

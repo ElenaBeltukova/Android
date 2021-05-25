@@ -10,6 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SecondApp">
         <activity android:name=".UpdateUserActivity"></activity>
+        <activity android:name=".UserActivity"></activity>
+        <activity android:name=".UserUpdActivity"></activity>
         <activity android:name=".AddUserActivity" />
         <activity android:name=".Item" />
         <activity android:name=".MainActivity">
