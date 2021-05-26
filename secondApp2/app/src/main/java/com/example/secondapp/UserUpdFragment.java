@@ -49,7 +49,7 @@ public class UserUpdFragment extends Fragment {
                 user.setPhone(editTextPhoneUpdFr.getText().toString());
                 users.updateUser(user);
 
-                Intent intent = new Intent(getActivity(), UserActivity.class);
+                Intent intent = new Intent(getActivity(), UserPagerActivity.class);
                 intent.putExtra("position", position);
                 startActivity(intent);
 

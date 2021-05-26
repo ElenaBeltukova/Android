@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">secondApp</string>
+    <string name="app_name">Телефонная книга</string>
     <string name="txtBtnDel">DELETE</string>
     <string name="txtBtnUpd">UPDATE</string>
     <string name="txtUpd">Редактировать пользователя</string>

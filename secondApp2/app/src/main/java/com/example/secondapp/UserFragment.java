@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.text.Html;
 
 import androidx.fragment.app.Fragment;
 
@@ -23,16 +24,17 @@ public class UserFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        position = getActivity().getIntent().getIntExtra("position",1);
+        //position = getActivity().getIntent().getIntExtra("position",1);
+        position = getArguments().getInt("position");
         user = Users.get(getActivity()).getUserList().get(position);
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_user, viewGroup, false);
         userInfo = view.findViewById(R.id.userInfo);
-        userInfo.setText(user.getUserName()+" "+
-                user.getUserLastName()+"\n"+
-                user.getPhone());
+        userInfo.setText(Html.fromHtml("<strong>Имя:</strong> " + user.getUserName()+
+                "<br/><strong>Фамилия:</strong> " + user.getUserLastName()+
+                "<br/><strong>Телефон:</strong> " + user.getPhone()));
 
         Users users = Users.get(getActivity());
         btnUpdate = view.findViewById(R.id.btnUpdate);
@@ -43,10 +45,12 @@ public class UserFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 users.deleteUser(user);
-                userInfo.setText("Пользователь " + user.getUserName()+" "+user.getUserLastName() + " удален");
+                /*userInfo.setText("Пользователь " + user.getUserName()+" "+user.getUserLastName() + " удален");
                 userInfo.setTextColor(Color.RED);
                 btnUpdate.setEnabled(false);
-                btnDelete.setEnabled(false);
+                btnDelete.setEnabled(false);*/
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                startActivity(intent);
             }
         });
 
